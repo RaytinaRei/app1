@@ -1,16 +1,18 @@
 import './App.css';
 
 function App() {
-  let r ='React'
-  let rn ='React Native'
-  const el =(
-    <div>
-      Create Web & Mobile Apps <br/>
-      with {r} & {rn}
-    </div>
-  )
+    const divstyle ={
+      color: 'red',
+      backgroundColor: 'powderblue',
+      fontSize: 'larger',
+      padding: '3px',
+    }
+  
+  
   return (
-    el
+    <div style={divstyle}>
+      <h1>Hello React</h1>
+    </div>
   );
 }
 
