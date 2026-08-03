@@ -1,14 +1,9 @@
 import React from "react";
-import { Header, Content, Footer } from "./func-components";
+
+import Calculator2 from "./calculator";
 
 function App() {
-    return (
-        <>
-            <Header />
-            <Content />
-            <Footer />
-        </>
-    );
+    return <Calculator2/>
 }
 
 export default App;
