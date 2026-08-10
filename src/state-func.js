@@ -1,31 +1,36 @@
-import React, {useRef} from 'react';
-export default function RefsFunc() {
-    const num1 = useRef();
-    const num2 = useRef();
-    const operator = React.useRef();
-    const result = React.useRef();
-
-    const calculate = (ev) => {
-        let op = ev.target.innerText;
-        let n1 = parseInt(num1.current.innerText);
-        let n2 = parseInt(num2.current.innerText);
-        let r = eval(`${n1} ${op} ${n2}`);
-        result.current.innerText = r
-        operator.current.innerText = op
+import React, {useState} from 'react'
+export default function RefsStateFunc() {
+    let [text, setText] = useState('Hello World')
+    let [size, setSize] = React.useState(16) 
+    const onClickSetText = () => {
+        let t = prompt('กำหนดข้อความ')
+        if (t) {
+            setText(t)
+        }
     }
-    return (
-        <div style={{textAlign:'center',marginTop:'20',fontSize:'18'}}>
-            <span ref={num1}>15</span>&nbsp;
-            <span ref={operator}>?</span>&nbsp;
-            <span ref={num2}>5</span>&nbsp;
-            <span >=</span>&nbsp;
-            <span ref={result}>?</span>
-            <div>
-                <button onClick={calculate}>+</button>
-                <button onClick={calculate}>-</button>
-                <button onClick={calculate}>*</button>
-                <button onClick={calculate}>/</button>
-            </div>
+
+    const onClickZoomIn = () => {
+    let newSize = size + 1
+    setSize(newSize) 
+    }
+
+    let msgboxSyle = {
+        display: 'inline-block',
+        width: 350,
+        fontSize: size, 
+        //ใช้ค่าจาก State
+        backgroundColor: '#ccc',
+        padding: 5,
+        textAlign: 'left'
+    
+}
+
+return (
+    <div style={{textAlign:'center', marginTop:20}}>
+        <div style={msgboxSyle}>{text}</div><br/><br/>
+        <button onClick={onClickSetText}>ข้อความ</button>&nbsp;
+        <button onClick={onClickZoomIn}>เพิ่มขนาด</button>&nbsp;
+        <button onClick={() => setSize(size - 1)}>ลดขนาด</button>
         </div>
     )
 }
