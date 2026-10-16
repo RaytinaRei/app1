@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import profileImg from '../profile.jpg';
 
 const TITLES = [
   'Hardware & Software Developer',
@@ -283,19 +284,16 @@ const Hero = () => {
     },
     innerCore: {
       position: 'relative',
-      width: '62%',
-      height: '62%',
-      borderRadius: '24px',
-      backgroundColor: 'rgba(15, 15, 35, 0.75)',
-      backdropFilter: 'blur(16px)',
-      WebkitBackdropFilter: 'blur(16px)',
-      border: '1px solid rgba(255, 255, 255, 0.1)',
+      width: '74%',
+      height: '74%',
+      borderRadius: '50%',
+      backgroundColor: 'rgba(15, 15, 35, 0.85)',
+      border: '3px solid rgba(102, 126, 234, 0.6)',
       display: 'flex',
-      flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      boxShadow: 'inset 0 0 20px rgba(102, 126, 234, 0.2)',
-      animation: 'pulseGlow 5s ease-in-out infinite',
+      boxShadow: '0 0 35px rgba(102, 126, 234, 0.45)',
+      overflow: 'hidden',
     },
     iconSymbol: {
       fontSize: '3rem',
@@ -411,14 +409,23 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right Column: Decorative Geometric Shape */}
+        {/* Right Column: Profile Image with Decorative Rings */}
         <div style={styles.rightContent}>
           <div style={styles.geometricContainer}>
             <div style={styles.outerRing} />
             <div style={styles.middleRing} />
             <div style={styles.innerCore}>
-              <div style={styles.iconSymbol}>⚡</div>
-              <div style={styles.coreSubtext}>KMUTNB</div>
+              <img
+                src={profileImg}
+                alt="สิรภพ กฤษณภักดิ์"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center 15%',
+                  borderRadius: '50%',
+                }}
+              />
             </div>
           </div>
         </div>

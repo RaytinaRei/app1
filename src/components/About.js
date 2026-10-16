@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import profileImg from '../profile.jpg';
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -189,21 +190,30 @@ const About = () => {
               >
                 <div
                   style={{
-                    width: '120px',
-                    height: '120px',
+                    width: '130px',
+                    height: '130px',
                     borderRadius: '50%',
+                    padding: '3px',
                     background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                    marginBottom: '18px',
+                    boxShadow: '0 10px 25px rgba(102, 126, 234, 0.35)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    marginBottom: '20px',
-                    boxShadow: '0 10px 25px rgba(102, 126, 234, 0.35)',
-                    color: '#ffffff',
-                    fontSize: '3rem',
-                    fontWeight: 800,
+                    overflow: 'hidden',
                   }}
                 >
-                  ส
+                  <img
+                    src={profileImg}
+                    alt="นายสิรภพ กฤษณภักดิ์"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center 10%',
+                      borderRadius: '50%',
+                    }}
+                  />
                 </div>
                 <h3
                   style={{
